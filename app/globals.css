@@ -2,20 +2,84 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+:root{
+  --options-hover-color:oklch(0.527 0.154 150.069);
+  --options-color:#333333;
+  --options-color-secondary:#ffffff;
+  --logo-icon-color:oklch(0.527 0.154 150.069);
+  --logo-text-color:oklch(0.527 0.154 150.069);
+  --default-transition:all ease 800ms;
+  --navbar-menu-bg:beige;
+  --navbar-bg:rgb(240 253 244);
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+*{
+box-sizing: border-box;
 }
-
-body {
-  color: var(--foreground);
-  background: var(--background);
+body{
   font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.9rem;
+}
+
+/* NAVBAR STYLE */
+.Navbar{
+  width: 100%; display: flex; flex-direction: row; align-items: center; position:relative; top: 0;
+}
+.navbarBody{
+  position:relative;width:100%; display: flex; flex-direction: row; align-items: center; justify-content: space-between; padding: 1rem 1.6rem; background-color: var(--navbar-bg);
+}
+.navbar--logo{
+  display: flex; flex-direction: column ; align-items: center ; justify-content: center ; 
+}
+.logo-icon{
+  font-size: 4rem;
+  color: var(--logo-icon-color);
+}
+.logo-text{
+  font-size: 0.9rem;
+  color: var(--logo-text-color);
+}
+.navbar--options{
+  display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 0.4rem;
+}
+.navbar--options--sc{
+  display: flex; flex-direction: column;align-items: center; justify-content: center; gap: 0.4rem; position: absolute; width: 100%; top: 7.8rem; left: 0; background-color: var(--navbar-menu-bg); transition: var(--default-transition);
+}
+.show-menu{opacity: 1; transform: scale(1);}
+.hide-menu{opacity: 0; transform: scale(0);}
+.navbar-options{
+  color: var(--options-color); transition: var(--default-transition); padding:0.6rem;
+}
+.navbar-options:hover{
+  color: var(--options-hover-color);
+}
+.options-call{background-color: var(--options-hover-color); color: var(--options-color-secondary); border: 2px solid var(--options-hover-color);}
+.options-call:hover{background-color: transparent; color: var(--options-hover-color); }
+.navbar-option-focused{
+  color: var(--options-hover-color);
+}
+
+.ShowMenu-icon, .HideMenu-icon{
+  font-size:1.6rem; color: var(--options-color); transition: var(--default-transition);
+}.ShowMenu-icon:hover, .HideMenu-icon:hover{color: var(--options-hover-color);}
+
+/* HERO STYLE*/
+.Hero{
+  width: 100%;height:100vh; display: flex; flex-direction: row; align-items: center; justify-content: center;
+}
+.heroBody{
+  width: 100%; height: 100%; background:        linear-gradient(
+    rgba(0, 0, 0, 0.5), 
+    rgba(0, 0, 0, 0.6)
+  ),url('/modern_house.jpg'); background-size:cover; background-repeat: no-repeat; background-position: center; background-blend-mode: darken;
+}
+
+.hero--content{
+  width: 70%;height: 100%; display: flex; flex-direction: column; align-items:flex-start; justify-content:center; gap: 0.4rem; padding: 1rem 2rem 1rem 2rem ;
+}
+
+
+@media only screen and (max-width:768px) {
+  .navbar-options{width: 100%; text-align: center;}
+/* HERO */
+  .hero--content{width: 100%; padding: 0.8rem;}
 }
