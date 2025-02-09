@@ -34,29 +34,16 @@ body{
   font-size: 4rem;
   color: var(--logo-icon-color);
 }
-.logo-text{
-  font-size: 0.9rem;
-  color: var(--logo-text-color);
-}
-.navbar--options{
-  display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 0.4rem;
-}
-.navbar--options--sc{
-  display: flex; flex-direction: column;align-items: center; justify-content: center; gap: 0.4rem; position: absolute; width: 100%; top: 7.8rem; left: 0; background-color: var(--navbar-menu-bg); transition: var(--default-transition);
-}
+.logo-text{font-size: 0.9rem;color: var(--logo-text-color);}
+.navbar--options{display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 0.4rem;}
+.navbar--options--sc{display: flex; flex-direction: column;align-items: center; justify-content: center; gap: 0.4rem; position: absolute; width: 100%; top: 7.8rem; left: 0; background-color: var(--navbar-menu-bg); transition: var(--default-transition);}
 .show-menu{opacity: 1; transform: scale(1);}
 .hide-menu{opacity: 0; transform: scale(0);}
-.navbar-options{
-  color: var(--options-color); transition: var(--default-transition); padding:0.6rem;
-}
-.navbar-options:hover{
-  color: var(--options-hover-color);
-}
+.navbar-options{color: var(--options-color); transition: var(--default-transition); padding:0.6rem;}
+.navbar-options:hover{color: var(--options-hover-color);}
 .options-call{background-color: var(--options-hover-color); color: var(--options-color-secondary); border: 2px solid var(--options-hover-color);}
 .options-call:hover{background-color: transparent; color: var(--options-hover-color); }
-.navbar-option-focused{
-  color: var(--options-hover-color);
-}
+.navbar-option-focused{color: var(--options-hover-color);}
 
 .ShowMenu-icon, .HideMenu-icon{
   font-size:1.6rem; color: var(--options-color); transition: var(--default-transition);
