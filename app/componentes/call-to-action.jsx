@@ -5,7 +5,7 @@ import { ColourfulText } from './ui/colourful-text';
 
 function CallToAction() {
   return (
-    <div className={`CTA relative w-[100%] flex flex-row items-center justify-center`}>
+    <div className={`min-h-[300px] CTA relative w-[100%] flex flex-row items-center justify-center`}>
         <div className='ctaBody absolute -top-16 w-[90%] sm:w-[80%] bg-blue-300 flex flex-col sm:flex-row items-center justify-center'>
             <div className='bg-green-200 p-4 sm:p-8 w-[100%] sm:w-[50%]'>
                 <Email className='text-3xl sm:text-6xl'/>
