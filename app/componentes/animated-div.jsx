@@ -11,8 +11,8 @@ function AnimatedDiv({childern, className}) {
             ref={ref}
             initial={{opacity:0, y:50}}
             animate={inView ? {opacity:1, y:0} : {}}
-            transition={{duration:0.5}}
-            className={`${className} p-6 bg-gray-800 text-white rounded-lg shadow-lg`}
+            transition={{duration:1.4}}
+            className={`${className} py-y px-1 sm:p-6 bg-gray-800 text-white rounded-lg shadow-lg`}
         >
             {childern}
         </motion.div>

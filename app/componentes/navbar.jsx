@@ -15,22 +15,36 @@ import { IoClose as HideMenu } from "react-icons/io5";
 
 
 function Navbar() {
+    const [topScrolled, setTopScrolled] = useState(false)
+    const [loaded, setLoaded] = useState(false)
+    useEffect(()=>{
+    },[])
     // states
     const [showOptionsMenu, setShowOptionsMenu] = useState(false)
     const [smallScreen, setSmallScreen] = useState(false)
-
+    
     // function to reevaluate the state if client is using small screen (768px and less)
     function DoCheckSmallScreen(){
         if(window.innerWidth<=768 && !smallScreen) setSmallScreen(true)
-        else if(window.innerWidth >768 ) setSmallScreen(false)
+            else if(window.innerWidth >768 ) setSmallScreen(false)
     }
-    useEffect(()=>{
-        // check if client uses small screen
-        DoCheckSmallScreen()
-        // eventlistener on the window once resized, checks if client uses small screen
-        window.addEventListener('resize', DoCheckSmallScreen)
+    // function to check up if client scrolls  
+    function DoHandleScroll(){
+        if(window.scrollY > 0) setTopScrolled(true)
+            else setTopScrolled(false);
+    }
+useEffect(()=>{
+    setLoaded(true)
+    // check if client uses small screen
+    DoCheckSmallScreen()
+    // eventlistener on the window once resized/scrolled, checks if client uses small screen/scrolls
+    window.addEventListener('resize', DoCheckSmallScreen)
+    window.addEventListener('scroll', DoHandleScroll)
         // call back to unpin the eventlistener
-        return()=>window.removeEventListener('resize', DoCheckSmallScreen)
+        return()=>{
+            window.removeEventListener('resize', DoCheckSmallScreen)
+            window.removeEventListener('scroll', DoHandleScroll)
+        }
     },[])
     // logo text
     const logoText = "Modern Website"
@@ -80,16 +94,17 @@ function Navbar() {
         }
     }
   return (
-    <div className='Navbar'>
-        <div className='navbarBody'>
-            <div className='navbar--logo'>
-                <House className='logo-icon'/>
-                <p className='logo-text'>
+    <div className={`Navbar`}>
+        <div className={`navbarBody ${topScrolled ? 'navbarBody-scrolled' : ''}`}>
+            <div className={`navbar--logo`}>
+                <House className={`logo-icon ${topScrolled ? 'logo-icon-scrolled':''}`}/>
+                <p className={`logo-text ${topScrolled ? 'logo-text-scrolled' : ''}`}>
                     {logoText}
                 </p>
             </div>
 
-            <div className={`${!smallScreen ? 'navbar--options' : showOptionsMenu ? 'navbar--options--sc show-menu' : 'navbar--options--sc hide-menu'}`}>
+            { loaded &&
+            <div className={`${!smallScreen ? 'navbar--options' : showOptionsMenu ? `navbar--options--sc show-menu ${topScrolled&&'navbar--options--sc-scrolled'} ` : 'navbar--options--sc hide-menu'}`}>
                 {
                     navbarOptions.map((item,index)=>(<a
                         className={item.class} 
@@ -102,13 +117,13 @@ function Navbar() {
                         </a>))
                 }
             </div>
-            {smallScreen &&
-             <div>
+            }
+            {(loaded && smallScreen) &&
+                <div>
                 <button className={showHideMenuButton.class} id={showHideMenuButton.id} title={showHideMenuButton.title} onClick={showHideMenuButton.handler}>
-                    {!showOptionsMenu ? showHideMenuButton.showIcon : showHideMenuButton.hideIcon}
+                {!showOptionsMenu ? showHideMenuButton.showIcon : showHideMenuButton.hideIcon}
                 </button>
-                </div>    
-        }
+                </div>}
         </div>
     </div>
   )
