@@ -3,16 +3,16 @@
 @tailwind utilities;
 
 :root{
-  --options-hover-color:oklch(0.527 0.154 150.069);
+  --options-hover-color:#333333;
   --options-color:oklch(0.527 0.154 150.069);
   --options-color-secondary:#ffffff;
   --logo-icon-color:oklch(0.527 0.154 150.069);
   --logo-text-color:oklch(0.527 0.154 150.069);
   --default-transition:all ease 800ms;
-  --navbar-menu-bg:rgba(240, 253, 244,0.9);
-  --navbar-menu-bg-secondary:rgba(240,253,244,0.8);
-  --navbar-bg:rgba(240, 253, 244,0.9);
-  --navbar-bg-secondary:rgba(240,253,244,0.8);
+  --navbar-menu-bg:rgba(240, 253, 244,1);
+  --navbar-menu-bg-secondary:rgba(240,253,244,0.9);
+  --navbar-bg:rgba(240, 253, 244,1);
+  --navbar-bg-secondary:rgba(240,253,244,0.9);
 }
 *{
 box-sizing: border-box;
@@ -45,8 +45,8 @@ body{
 .logo-icon-scrolled{ font-size: 3rem;}
 .logo-text{font-size: 0.9rem;color: var(--logo-text-color); transition: var(--default-transition);}
 .logo-text-scrolled{font-size: 0.7rem;}
-.navbar--options{display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 0.4rem;}
-.navbar--options--sc{display: flex; flex-direction: column;align-items: center; justify-content: center; gap: 0.4rem; position: absolute; width: 100%; top: 6rem; left: 0; background-color: var(--navbar-menu-bg); transition: var(--default-transition); backdrop-filter: blur(4px); border-top: 2px solid var(--navbar-menu-bg);}
+.navbar--options{display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 0.4rem; cursor:pointer; }
+.navbar--options--sc{display: flex; flex-direction: column;align-items: center; justify-content: center; gap: 0.4rem; position: absolute; width: 100%; top: 6rem; left: 0; background-color: var(--navbar-menu-bg); transition: var(--default-transition); backdrop-filter: blur(4px); border-top: 2px solid var(--navbar-menu-bg); font-size: smaller; cursor: pointer;}
 .navbar--options--sc-scrolled{top:4.4rem; background-color: var(--navbar-menu-bg-secondary);border-top: 2px solid var(--options-hover-color);}
 .show-menu{opacity: 1; transform: scale(1);}
 .hide-menu{opacity: 0; transform: scale(0);}
@@ -72,7 +72,7 @@ body{
 }
 
 .hero--content{
-  width: 70%;height: 100%; display: flex; flex-direction: column; align-items:flex-start; justify-content:center; gap: 0.4rem; padding: 1rem 2rem 1rem 2rem ;
+  width: 70%;height: 100%; display: flex; flex-direction: column; align-items:flex-start; justify-content:center; gap: 0.4rem; padding: 3rem 2rem 1rem 2rem ;
 }
 
 
