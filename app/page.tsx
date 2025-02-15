@@ -3,6 +3,8 @@ import Navbar from '@/app/componentes/navbar'
 import Hero from '@/app/componentes/hero'
 import CallToAction from '@/app/componentes/call-to-action'
 import Content from '@/app/componentes/content'
+import Footer from '@/app/componentes/footer'
+
 export default function Home() {
   return (
     <div>
@@ -10,6 +12,7 @@ export default function Home() {
         <Hero/>
         <CallToAction/>
         <Content/>
+        <Footer/>
     </div>
   );
 }

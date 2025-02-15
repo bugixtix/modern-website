@@ -6,13 +6,13 @@ import React, { Children } from 'react'
 function AnimatedDiv({childern, className}) {
     const {ref, inView} = useInView({triggerOnce:false, threshold:0.2});
   return (
-    <div>
+    <div className='w-[100%] h-[100%] bg-transparent'>
         <motion.div
             ref={ref}
             initial={{opacity:0, y:50}}
             animate={inView ? {opacity:1, y:0} : {}}
             transition={{duration:1.4}}
-            className={`${className} py-y px-1 sm:p-6 bg-gray-800 text-white rounded-lg shadow-lg`}
+            className={`${className} py-1 px-1 bg-gray-800 rounded-lg`}
         >
             {childern}
         </motion.div>

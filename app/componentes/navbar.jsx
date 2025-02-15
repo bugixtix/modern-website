@@ -10,11 +10,12 @@ import { FaGears as Service } from 'react-icons/fa6';
 import { IoCallSharp as Call } from 'react-icons/io5';
 import { FaListUl as ShowMenu } from 'react-icons/fa6';
 import { IoClose as HideMenu } from "react-icons/io5";
-
+import { useRouter } from 'next/navigation';
 
 
 
 function Navbar() {
+    const router = useRouter()
     const [topScrolled, setTopScrolled] = useState(false)
     const [loaded, setLoaded] = useState(false)
     useEffect(()=>{
@@ -54,28 +55,28 @@ useEffect(()=>{
             text:"HOME",
             title:"Home",
             id:"Home",
-            href:"#Home",
+            href:"/",
             class:"options-home navbar-options",
             icon:<Home/>
         },{
             text:"LEISTUNG",
             title:"Leistung",
             id:"Service",
-            href:"#Service",
+            href:"/leistung",
             class:"options-service navbar-options",
             icon:<Service/>,
         },{
             text:"KONTAKT",
             title:"Kontakt",
             id:"Contact",
-            href:"#Contact",
+            href:"/kontakt",
             class:"options-contact navbar-options",
             icon:<Contact/>
         },{
             text:"JETZT ANRUFEN",
             title:"Jetzt_Anrufen",
             id:"Call",
-            href:"#Call",
+            href:"/call",
             class:"options-call navbar-options",
             icon:<Call/>
         },
@@ -110,7 +111,7 @@ useEffect(()=>{
                         className={item.class} 
                         id={item.id} 
                         title={item.title}
-                        href={item.href}
+                        onClick={()=>router.push(item.href)}
                         key={index}
                         >
                             {item.text}
