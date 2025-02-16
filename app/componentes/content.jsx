@@ -35,7 +35,7 @@ function Content() {
       )}
   return (
   <div className="relative mt-8 mb-16 h-auto md:h-screen flex flex-col items-center gap-20 sm:py-2">
-    <AnimatedDiv className='h-[100%] bg-transparent w-[100%] flex flex-col justify-center items-center' childern={<ContentBody/>}/>
+    <AnimatedDiv className='h-[100%] bg-transparent w-[100%] flex flex-col justify-center items-center' childern={<ContentBody/>} triggerOnce={true}/>
   </div>
   )
 }

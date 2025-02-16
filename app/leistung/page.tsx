@@ -12,11 +12,12 @@ function Leistung() {
 
   return (
     <div className="min-h-screen">
-        {/* <Navbar/>
+        <Navbar/>
         <PseudoDiv h="h-[7rem]"/>
         <Content/>
-        <Image_/> */}
+        <Image_/>
         <Leistung_/>
+        <PseudoDiv h="h-[4rem]"/>
         <Footer/>
     </div>
   )

@@ -53,7 +53,7 @@ function FooterContent(){
                 <p className='text-green-800 text-sm'>{logoText}</p>
             </div>
             <div className='flex flex-row flex-wrap items-center justify-center gap-2'>
-                {footerOptions.map((i,index)=>(<a key={index} href={i.href} className='hover:text-green-950 transition-all ease duration-700' >{i.text}</a>))}
+                {footerOptions.map((i,index)=>(<a key={index} href={i.href} className='text-xs hover:text-green-950 transition-all ease duration-700' >{i.text}</a>))}
             </div>
         </div>
     )
