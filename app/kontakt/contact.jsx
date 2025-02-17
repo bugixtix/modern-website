@@ -27,11 +27,11 @@ function ContactBody(){
     const description = ["Erleben Sie die perfekte Gemeinsamkeit aus Qualität und Leidenschaft bei Modern Leben.", "Kontaktieren Sie uns jetzt und entdecken Sie, wie wir Ihre Träume wahr werden lassen!"]
     return(
         <div>
-            {/* <div >
+            <div className='p-4'>
                 <ColourfulText colors={colors} className='font-bold text-lg sm:text-2xl' text={title}/>
                 {description.map((item, index)=>(<p key={index} className='pt-2'>{item}</p>))}
-            </div> */}
-            <div className='flex flex-row gap-4 items-baseline'>
+            </div>
+            <div className='flex flex-col lg:flex-row gap-0 items-stretch w-[100%]'>
                 <ContactForm/>
                 <ContactInfo/>
             </div>
@@ -40,15 +40,16 @@ function ContactBody(){
 }
 
 function ContactForm(){
+    const mainText = "Senden Sie uns eine Nachricht"
     return(
-        <div className='flex flex-col items-start justify-start gap-4 py-4'>
-            
+        <div className='flex flex-col items-stretch justify-start gap-6 p-4 bg-gray-100 sm:text-sm text-xs'>
+            <p>{mainText}</p>
             <div className='flex flex-row items-start justify-start gap-4 w-[100%]'>
-                <input placeholder={'Vorname *'} type='text' className='px-4 py-2 outline-none shadow-[0px_4px_10px_rgba(39,174,96,0.5)] focus-within:shadow-[0px_6px_15px_rgba(39,174,96,0.8)] hover:shadow-[0px_6px_15px_rgba(39,174,96,0.8)] transition-all ease-linear duration-300' />
-                <input placeholder={'Nachname *'} type='text' className='flex-1 px-4 py-2 outline-none shadow-[0px_4px_10px_rgba(39,174,96,0.5)] focus-within:shadow-[0px_6px_15px_rgba(39,174,96,0.8)] hover:shadow-[0px_6px_15px_rgba(39,174,96,0.8)] transition-all ease-linear duration-300'/>
+                <input placeholder={'Vorname *'} type='text' className='w-[50%] px-4 py-2 outline-none shadow-[0px_4px_10px_rgba(39,174,96,0.5)] focus-within:shadow-[0px_6px_15px_rgba(39,174,96,0.8)] hover:shadow-[0px_6px_15px_rgba(39,174,96,0.8)] transition-all ease-linear duration-300 '/>
+                <input placeholder={'Nachname *'} type='text' className='w-[50%] flex-1 px-4 py-2 outline-none shadow-[0px_4px_10px_rgba(39,174,96,0.5)] focus-within:shadow-[0px_6px_15px_rgba(39,174,96,0.8)] hover:shadow-[0px_6px_15px_rgba(39,174,96,0.8)] transition-all ease-linear duration-300'/>
             </div>
             <input placeholder={'Email Adresse *'} type='email' className=' px-4 py-2 w-[100%] outline-none shadow-[0px_4px_10px_rgba(39,174,96,0.5)] focus-within:shadow-[0px_6px_15px_rgba(39,174,96,0.8)] hover:shadow-[0px_6px_15px_rgba(39,174,96,0.8)] transition-all ease-linear duration-300' />
-            <textarea placeholder='Kommentar *' className='px-4 py-2 w-[100%] outline-none shadow-[0px_4px_10px_rgba(39,174,96,0.5)] focus-within:shadow-[0px_6px_15px_rgba(39,174,96,0.8)] hover:shadow-[0px_6px_15px_rgba(39,174,96,0.8)] transition-all ease-linear duration-300'></textarea>
+            <textarea placeholder='Kommentar *' className='px-4 py-2 w-[100%] h-[140px] outline-none shadow-[0px_4px_10px_rgba(39,174,96,0.5)] focus-within:shadow-[0px_6px_15px_rgba(39,174,96,0.8)] hover:shadow-[0px_6px_15px_rgba(39,174,96,0.8)] transition-all ease-linear duration-300'></textarea>
             <div className='flex flex-row justify-between items-baseline content-between w-[100%]'>
                 <CoolButton className={'px-4 py-2 font-bold text-white'} text={'Senden'}/>
                 <p><span className='text-green-400 text-lg'>*</span> Gibt ein Pflichtfeld an</p>
@@ -59,32 +60,32 @@ function ContactForm(){
 function ContactInfo(){
     const API_KEY = "AIzaSyB_MmP7fzbsc8TJSMIkOSSkc3xAWw9XB7o"
     const query ="europa"
-    const title = "Unsere Adresse"
+    const title = "Besuchen Sie uns"
     const locationText = "Hauptstraße 45, 10115 Berlin, Deutschland"
-    const callText = "info@webagentur-berlin.de"
-    const emailText = "+49 30 12345678"
+    const callText = "+49 30 12345678"
+    const emailText = "info@webagentur-berlin.de"
     return(
-        <div>
-            <div className='flex flex-col justify-start items-start gap-2 w-[400px]'>
+        <div className='bg-green-400 flex flex-wrap justify-start flex-col px-4 pb-4'>
+            <div className='flex flex-col justify-start items-start gap-2 w-[100%] lg:w-[400px] py-4 text-xs sm:text-sm'>
                 <p>{title}</p>
-                <div className='flex flex-row gap-2'>
-                    <Location/>
-                    <p>{locationText}</p>
+                <div className='flex flex-row gap-2 items-center group cursor-pointer'>
+                    <Location className='text-4xl w-[50px] sm:w-auto rounded-[100%] border border-black p-2'/>
+                    <p className='group-hover:text-gray-800 group-hover:underline'>{locationText}</p>
                 </div>
-                <div className='flex flex-row gap-2'>
-                    <Call/>
-                    <p>{callText}</p>
+                <div className='flex flex-row gap-2 items-center group cursor-pointer'>
+                    <Call className=' text-4xl rounded-3xl border border-black p-2'/>
+                    <p className='group-hover:text-gray-800 group-hover:underline'>{callText}</p>
                 </div>
-                <div className='flex flex-row gap-2'>
-                    <Email/>
-                    <p>{emailText}</p>
+                <div className='flex flex-row gap-2 items-center group cursor-pointer'>
+                    <Email className='text-4xl rounded-3xl border border-black py-2'/>
+                    <p className='group-hover:text-gray-800 group-hover:underline'>{emailText}</p>
                 </div>
                 
             </div>
             <div className=''>
             <iframe
                 name="map--frame"
-                className="w-[100%]"
+                className="w-[100%] h-[240px]"
                 loading="lazy"
                 src={`https://www.google.com/maps/embed/v1/place?key=${API_KEY}&q=${query}`}>
                 </iframe>
