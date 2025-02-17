@@ -47,7 +47,7 @@ body{
 .logo-text-scrolled{font-size: 0.7rem;}
 .navbar--options{display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 0.4rem; cursor:pointer; }
 .navbar--options--sc{display: flex; flex-direction: column;align-items: center; justify-content: center; gap: 0.4rem; position: absolute; width: 100%; top: 6rem; left: 0; background-color: var(--navbar-menu-bg); transition: var(--default-transition); backdrop-filter: blur(4px); border-top: 2px solid var(--navbar-menu-bg); font-size: smaller; cursor: pointer;}
-.navbar--options--sc-scrolled{top:4.4rem; background-color: var(--navbar-menu-bg-secondary);border-top: 2px solid var(--options-hover-color);}
+.navbar--options--sc-scrolled{top:4.4rem; background-color: var(--navbar-menu-bg-secondary);border-top: 1px solid var(--options-color);}
 .show-menu{opacity: 1; transform: scale(1);}
 .hide-menu{opacity: 0; transform: scale(0);}
 .navbar-options{color: var(--options-color); transition: var(--default-transition); padding:0.6rem; font-size: smaller;}
@@ -55,9 +55,10 @@ body{
 .options-call{background-color: var(--options-hover-color); color: var(--options-color-secondary); border: 2px solid var(--options-hover-color);}
 .options-call:hover{background-color: transparent; color: var(--options-hover-color); }
 .navbar-option-focused{color: var(--options-hover-color);}
-
+.ShowMenu-icon{font-size:1rem;}
+.HideMenu-icon{font-size:1.4rem}
 .ShowMenu-icon, .HideMenu-icon{
-  font-size:1.6rem; color: var(--options-color); transition: var(--default-transition);
+ color: var(--options-color); transition: var(--default-transition);
 }.ShowMenu-icon:hover, .HideMenu-icon:hover{color: var(--options-hover-color);}
 
 /* HERO STYLE*/
