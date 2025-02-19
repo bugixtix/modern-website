@@ -8,13 +8,15 @@ import ImageWithTitle from '@/app/kontakt/image'
 import Contact_ from '@/app/kontakt/contact'
 
 function Kontakt() {
+  const clientMailAddress = "client@mail.de"
+  const clientTelNumber = "017512341234"
   return (
     <div>
-        <Navbar/>
+        <Navbar tel={clientTelNumber}/>
         <PseudoDiv h="h-[4rem]"/>
         <ImageWithTitle/>
         <Contact_/>
-        <Footer/>        
+        <Footer tel={clientTelNumber}/>        
     </div>
   )
 }

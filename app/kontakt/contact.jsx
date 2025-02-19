@@ -41,27 +41,33 @@ function ContactBody(){
 
 function ContactForm(){
     const mainText = "Senden Sie uns eine Nachricht"
+
+    const formSubmitted = (e) =>{
+        e.preventDefault()
+        console.log('submitted from form')
+    }
     return(
-        <div className='flex flex-col items-stretch justify-start gap-6 p-4 bg-gray-100 sm:text-sm text-xs'>
+        <form className='flex flex-col items-stretch justify-start gap-6 p-4 bg-gray-100 sm:text-sm text-xs' onSubmit={formSubmitted}>
             <p>{mainText}</p>
             <div className='flex flex-row items-start justify-start gap-4 w-[100%]'>
-                <input placeholder={'Vorname *'} type='text' className='w-[50%] px-4 py-2 outline-none shadow-[0px_4px_10px_rgba(39,174,96,0.5)] focus-within:shadow-[0px_6px_15px_rgba(39,174,96,0.8)] hover:shadow-[0px_6px_15px_rgba(39,174,96,0.8)] transition-all ease-linear duration-300 '/>
-                <input placeholder={'Nachname *'} type='text' className='w-[50%] flex-1 px-4 py-2 outline-none shadow-[0px_4px_10px_rgba(39,174,96,0.5)] focus-within:shadow-[0px_6px_15px_rgba(39,174,96,0.8)] hover:shadow-[0px_6px_15px_rgba(39,174,96,0.8)] transition-all ease-linear duration-300'/>
+                <input placeholder={'Vorname *'} type='text' className='w-[50%] px-4 py-2 outline-none shadow-[0px_4px_10px_rgba(39,174,96,0.5)] focus-within:shadow-[0px_6px_15px_rgba(39,174,96,0.8)] hover:shadow-[0px_6px_15px_rgba(39,174,96,0.8)] transition-all ease-linear duration-300 ' required/>
+                <input placeholder={'Nachname *'} type='text' className='w-[50%] flex-1 px-4 py-2 outline-none shadow-[0px_4px_10px_rgba(39,174,96,0.5)] focus-within:shadow-[0px_6px_15px_rgba(39,174,96,0.8)] hover:shadow-[0px_6px_15px_rgba(39,174,96,0.8)] transition-all ease-linear duration-300' required/>
             </div>
-            <input placeholder={'Email Adresse *'} type='email' className=' px-4 py-2 w-[100%] outline-none shadow-[0px_4px_10px_rgba(39,174,96,0.5)] focus-within:shadow-[0px_6px_15px_rgba(39,174,96,0.8)] hover:shadow-[0px_6px_15px_rgba(39,174,96,0.8)] transition-all ease-linear duration-300' />
-            <textarea placeholder='Kommentar *' className='px-4 py-2 w-[100%] h-[140px] outline-none shadow-[0px_4px_10px_rgba(39,174,96,0.5)] focus-within:shadow-[0px_6px_15px_rgba(39,174,96,0.8)] hover:shadow-[0px_6px_15px_rgba(39,174,96,0.8)] transition-all ease-linear duration-300'></textarea>
+            <input placeholder={'Email Adresse *'} type='email' className=' px-4 py-2 w-[100%] outline-none shadow-[0px_4px_10px_rgba(39,174,96,0.5)] focus-within:shadow-[0px_6px_15px_rgba(39,174,96,0.8)] hover:shadow-[0px_6px_15px_rgba(39,174,96,0.8)] transition-all ease-linear duration-300' required />
+            <textarea placeholder='Kommentar *' className='px-4 py-2 w-[100%] h-[140px] outline-none shadow-[0px_4px_10px_rgba(39,174,96,0.5)] focus-within:shadow-[0px_6px_15px_rgba(39,174,96,0.8)] hover:shadow-[0px_6px_15px_rgba(39,174,96,0.8)] transition-all ease-linear duration-300' required></textarea>
             <div className='flex flex-row justify-between items-baseline content-between w-[100%]'>
-                <CoolButton className={'px-4 py-2 font-bold text-white'} text={'Senden'}/>
+                <CoolButton handler={()=>console.log('submitted')} className={'px-4 py-2 font-bold text-white'} text={'Senden'}/>
                 <p><span className='text-green-400 text-lg'>*</span> Gibt ein Pflichtfeld an</p>
             </div>
-        </div>
+        </form>
     )
 }
 function ContactInfo(){
     const API_KEY = "AIzaSyB_MmP7fzbsc8TJSMIkOSSkc3xAWw9XB7o"
     const query ="europa"
     const title = "Besuchen Sie uns"
-    const locationText = "Hauptstraße 45, 10115 Berlin, Deutschland"
+    const locationText = "Hauptstraße 45, "
+    const addressText = "10115 Berlin, DE"
     const callText = "+49 30 12345678"
     const emailText = "info@webagentur-berlin.de"
     return(
@@ -69,8 +75,11 @@ function ContactInfo(){
             <div className='flex flex-col justify-start items-start gap-2 w-[100%] lg:w-[400px] py-4 text-xs sm:text-sm'>
                 <p>{title}</p>
                 <div className='flex flex-row gap-2 items-center group cursor-pointer'>
-                    <Location className='text-4xl w-[50px] sm:w-auto rounded-[100%] border border-black p-2'/>
-                    <p className='group-hover:text-gray-800 group-hover:underline'>{locationText}</p>
+                    <Location className='text-4xl sm:w-auto rounded-[100%] border border-black p-2'/>
+                    <div className='flex flex-row flex-wrap gap-1 group-hover:text-gray-800 group-hover:underline'>
+                        <p className=''>{locationText}</p>
+                        <p className=''>{addressText}</p>
+                    </div>
                 </div>
                 <div className='flex flex-row gap-2 items-center group cursor-pointer'>
                     <Call className=' text-4xl rounded-3xl border border-black p-2'/>

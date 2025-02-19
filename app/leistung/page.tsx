@@ -9,16 +9,17 @@ import Image_ from '@/app/leistung/image'
 import Leistung_ from '@/app/leistung/leistung'
 
 function Leistung() {
-
+  const clientMailAddress = "client@mail.de"
+  const clientTelNumber = "017512341234"
   return (
     <div className="min-h-screen">
-        <Navbar/>
+        <Navbar tel={clientTelNumber}/>
         <PseudoDiv h="h-[7rem]"/>
         <Content/>
         <Image_/>
         <Leistung_/>
         <PseudoDiv h="h-[4rem]"/>
-        <Footer/>
+        <Footer tel={clientTelNumber}/>
     </div>
   )
 }

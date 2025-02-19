@@ -14,7 +14,7 @@ import { useRouter } from 'next/navigation';
 
 
 
-function Navbar() {
+function Navbar({tel}) {
     const router = useRouter()
     const [topScrolled, setTopScrolled] = useState(false)
     const [loaded, setLoaded] = useState(false)
@@ -48,7 +48,7 @@ useEffect(()=>{
         }
     },[])
     // logo text
-    const logoText = "Modern Website"
+    const logoText = "MODERN WEBSITE"
     // array of navbar options 
     const navbarOptions = [
         {
@@ -76,7 +76,7 @@ useEffect(()=>{
             text:"JETZT ANRUFEN",
             title:"Jetzt_Anrufen",
             id:"Call",
-            href:"/call",
+            href:"tel:"+tel,
             class:"options-call navbar-options",
             icon:<Call/>
         },

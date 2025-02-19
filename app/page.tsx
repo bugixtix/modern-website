@@ -8,14 +8,19 @@ import PseudoDiv from '@/app/componentes/PseudoDiv'
 
 
 export default function Home() {
+  const clientMailAddress = "client@mail.de"
+  const clientTelNumber = "017512341234"
   return (
     <div>
-        <Navbar/>
+        <Navbar tel={clientTelNumber}/>
         <Hero/>
-        <CallToAction/>
+        <CallToAction 
+          mail={clientMailAddress}
+          tel={clientTelNumber}
+          />
         <Content/>
         <PseudoDiv h="h-[7rem]"/>
-        <Footer/>
+        <Footer tel={clientTelNumber}/>
     </div>
   );
 }

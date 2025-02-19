@@ -1,6 +1,6 @@
 import {motion } from 'framer-motion'
 
-export const CoolButton = ({text, className})=> {
+export const CoolButton = ({text, className,handler=()=>{}})=> {
 
     return (
       <motion.button
@@ -12,6 +12,7 @@ export const CoolButton = ({text, className})=> {
         }}
         whileHover={{ scale: 1.05, boxShadow: "0px 6px 15px rgba(39, 174, 96, 0.8)" }}
         whileTap={{ scale: 0.95, boxShadow: "0px 2px 5px rgba(39, 174, 96, 0.5)" }}
+        onClick={handler}
       >
         {text||"Click me"}
       </motion.button>
