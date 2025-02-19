@@ -50,8 +50,8 @@ body{
 .navbar--options--sc-scrolled{top:4.4rem; background-color: var(--navbar-menu-bg-secondary);border-top: 1px solid var(--options-color);}
 .show-menu{opacity: 1; transform: scale(1);}
 .hide-menu{opacity: 0; transform: scale(0);}
-.navbar-options{color: var(--options-color); transition: var(--default-transition); padding:0.6rem; font-size: smaller;}
-.navbar-options:hover{color: var(--options-hover-color);}
+.navbar-options,.footer-options{color: var(--options-color); transition: var(--default-transition); padding:0.6rem; font-size: smaller;}
+.navbar-options:hover, .footer-options:hover{color: var(--options-hover-color);}
 .options-call{background-color: var(--options-hover-color); color: var(--options-color-secondary); border: 2px solid var(--options-hover-color);}
 .options-call:hover{background-color: transparent; color: var(--options-hover-color); }
 .navbar-option-focused{color: var(--options-hover-color);}
