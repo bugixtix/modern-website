@@ -14,7 +14,7 @@ function Footer({tel}) {
 }
 
 function FooterContent({tel}){
-    const logoText = "MODERN WEBSITE"
+    const logoText = "MODERN LEBEN"
     const footerOptions = [
         {
             text:"HOME",

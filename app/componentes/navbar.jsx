@@ -48,7 +48,7 @@ useEffect(()=>{
         }
     },[])
     // logo text
-    const logoText = "MODERN WEBSITE"
+    const logoText = "MODERN LEBEN"
     // array of navbar options 
     const navbarOptions = [
         {

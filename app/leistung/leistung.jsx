@@ -20,7 +20,8 @@ import service08 from '@/public/service08.jpg'
 function Leistung_() {
   return (
     <div className="relative mt-8 mb-16 flex flex-col items-center py-1 sm:py-2">
-        <AnimatedDiv className='h-[100%] bg-transparent w-[100%] flex flex-col justify-center items-center' childern={<LeistungBody/>} triggerOnce={true} />
+        {/* <AnimatedDiv className='h-[100%] bg-transparent w-[100%] flex flex-col justify-center items-center' childern={<LeistungBody/>} triggerOnce={true} /> */}
+        <LeistungBody/>
     </div>
   )
 }
@@ -78,8 +79,10 @@ function LeistungBody() {
                 <TextGenerateEffect className=' text-center max-w-[100%] px-6 sm:px-0 sm:max-w-[100%]' words={description} />
             </div>
 
-            <div className='flex flex-wrap justify-center items-center gap-8 w-[100%] sm:w-[90%]'>
-                {services.map((item, index)=>(<LeistungCard key={index} service={item} />))}
+            <div className='relative flex flex-row flex-wrap justify-center items-center gap-8 w-[100%] sm:w-[90%]'>
+                {services.map((item, index)=>(
+                  <AnimatedDiv className={'flex flex-wrap w-[280px] sm:w-[340px]'} key={index} triggerOnce={false} initialStyle={false} childern={<LeistungCard key={index} service={item} />}/>
+                  ))}
             </div>
         </div>
     )
