@@ -31,8 +31,8 @@ function Navbar({tel}) {
     }
     // function to check up if client scrolls  
     function DoHandleScroll(){
-        if(window.scrollY > 0) setTopScrolled(true)
-            else setTopScrolled(false);
+        if(window.scrollY > 0) {setTopScrolled(true);}
+            else {setTopScrolled(false);}
     }
 useEffect(()=>{
     setLoaded(true)

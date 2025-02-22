@@ -27,7 +27,7 @@ function Content() {
             <TextGenerateEffect className='font-semibold text-2xl md:text-lg lg:text-2xl leading-snug text-gray-800' words={second_description}/>
           </div>
           <div className='flex flex-col justify-evenly items-stretch content-center'>
-            {main_text.map((i, index)=>(<p key={index} className='font-light sm:text-sm text-sm lg:text-lg/relaxed xl:text-[25px]/relaxed leading-relaxed py-2 text-green-800'>{i}</p>))}
+            {main_text.map((i, index)=>(<p key={index} className='font-light sm:text-sm text-sm lg:text-lg/relaxed xl:text-[24px]/relaxed leading-relaxed py-2 text-green-800'>{i}</p>))}
           </div>
           <CoolButton className='relative overflow-hidden px-4 py-2 text-sm font-semibold text-white rounded-sm' text={button_text} handler={goToContactPage}/>
         </div>

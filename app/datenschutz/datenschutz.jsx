@@ -12,7 +12,7 @@ function Content() {
             {
                 PRIVACYpolicy.content.map((item,index)=>(
                     <ul key={index}>
-                        <p className="sm:text-lg/snug font-bold"><span>{index+1}. </span>{item.title}</p>
+                        <p className="sm:text-lg/snug font-normal"><span>{index+1}. </span>{item.title}</p>
                         {item.text.map((i,_)=>(<li className={`${item.text.length > 6 && _!=item.text.length-1 && _!=0 ? 'pl-1' : ''}`} key={_}>{i}</li>))}
                     </ul>
                     
