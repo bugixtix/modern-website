@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 :root{
-  --options-hover-color:#333333;
+  --options-hover-color:#0d542b;
+  --call-hover:#05df72;
   --options-color:oklch(0.527 0.154 150.069);
   --options-color-secondary:#ffffff;
   --logo-icon-color:oklch(0.527 0.154 150.069);
@@ -14,14 +15,41 @@
   --navbar-bg:rgba(240, 253, 244,1);
   --navbar-bg-secondary:rgba(240,253,244,0.9);
 }
+@font-face {
+  font-family: Raleway;
+  src: url('/Raleway-Bold.ttf');
+  font-weight: 600;
+}
+@font-face {
+  font-family: Raleway;
+  src: url('/Raleway-Regular.ttf');
+  font-weight:400;
+}
+/* @font-face {
+  font-family: Raleway;
+  src: url('/Raleway-Thin.ttf');
+  font-weight:300;
+} */
+@font-face {
+  font-family: Raleway;
+  src: url('/Raleway-ExtraBold.ttf');
+  font-weight:700;
+}
+@font-face {
+  font-family: Raleway;
+  src: url('/Raleway-Light.ttf');
+  font-weight:300;
+}
 *{
 box-sizing: border-box;
+/* font-family: Raleway, monospace; */
 }
 html{
   overflow-x:hidden;
 }
 body{
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Raleway;
+  font-weight: normal;
   font-size: 0.9rem;
 }
 
@@ -42,18 +70,18 @@ body{
   font-size: 4rem;
   color: var(--logo-icon-color); transition: var(--default-transition);
 }
-.logo-icon-scrolled{ font-size: 3rem;}
-.logo-text{font-size: 0.7rem;color: var(--logo-text-color); transition: var(--default-transition);}
-.logo-text-scrolled{font-size: 0.7rem;}
+.logo-icon-scrolled{ font-size: 2rem !important;}
+.logo-text{font-size: 0.7rem;font-weight: 400 ;color: var(--logo-text-color); transition: var(--default-transition);}
+.logo-text-scrolled{font-size: 0.7rem !important;}
 .navbar--options{display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 0.4rem; cursor:pointer; }
 .navbar--options--sc{display: flex; flex-direction: column;align-items: center; justify-content: center; gap: 0.4rem; position: absolute; width: 100%; top: 6rem; left: 0; background-color: var(--navbar-menu-bg); transition: var(--default-transition); backdrop-filter: blur(4px); border-top: 2px solid var(--navbar-menu-bg); font-size: smaller; cursor: pointer;}
-.navbar--options--sc-scrolled{top:4.4rem; background-color: var(--navbar-menu-bg-secondary);border-top: 1px solid var(--options-color);}
+.navbar--options--sc-scrolled{top:5rem; background-color: var(--navbar-menu-bg-secondary);border-top: 1px solid var(--options-color);}
 .show-menu{opacity: 1; transform: translateY(0rem);}
 .hide-menu{opacity: 0; transform: translateY(-2rem);}
 .navbar-options,.footer-options{color: var(--options-color); transition: var(--default-transition); padding:0.6rem; font-size: smaller;}
 .navbar-options:hover, .footer-options:hover{color: var(--options-hover-color);}
-.options-call{background-color: var(--options-hover-color); color: var(--options-color-secondary); border: 2px solid var(--options-hover-color);}
-.options-call:hover{background-color: transparent; color: var(--options-hover-color); }
+.options-call{background-color: var(--options-hover-color); color: var(--options-color-secondary);}
+.options-call:hover{background-color: var(--call-hover); color: var(--options-hover-color); }
 .navbar-option-focused{color: var(--options-hover-color);}
 .ShowMenu-icon{font-size:1rem;}
 .HideMenu-icon{font-size:1.4rem}
@@ -85,4 +113,6 @@ body{
   .navbar-options{width: 100%; text-align: center;}
 /* HERO */
   .hero--content{width: 100%; padding: 0.8rem;}
+  /*  */
+  .navbarBody{padding:1rem;}
 }
