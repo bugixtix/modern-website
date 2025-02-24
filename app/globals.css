@@ -75,7 +75,7 @@ body{
 .logo-text-scrolled{font-size: 0.7rem !important;}
 .navbar--options{display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 0.4rem; cursor:pointer; }
 .navbar--options--sc{display: flex; flex-direction: column;align-items: center; justify-content: center; gap: 0.4rem; position: absolute; width: 100%; top: 6rem; left: 0; background-color: var(--navbar-menu-bg); transition: var(--default-transition); backdrop-filter: blur(4px); border-top: 2px solid var(--navbar-menu-bg); font-size: smaller; cursor: pointer;}
-.navbar--options--sc-scrolled{top:5rem; background-color: var(--navbar-menu-bg-secondary);border-top: 1px solid var(--options-color);}
+.navbar--options--sc-scrolled{top:5rem; background-color: var(--navbar-menu-bg-secondary);}
 .show-menu{opacity: 1; transform: translateY(0rem);}
 .hide-menu{opacity: 0; transform: translateY(-2rem);}
 .navbar-options,.footer-options{color: var(--options-color); transition: var(--default-transition); padding:0.6rem; font-size: smaller;}
