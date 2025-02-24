@@ -10,11 +10,12 @@ import { FaGears as Service } from 'react-icons/fa6';
 import { IoCallSharp as Call } from 'react-icons/io5';
 import { FaListUl as ShowMenu } from 'react-icons/fa6';
 import { IoClose as HideMenu } from "react-icons/io5";
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 
 
 
 function Navbar({tel}) {
+    const pathName = usePathname()
     const router = useRouter()
     const [topScrolled, setTopScrolled] = useState(false)
     const [loaded, setLoaded] = useState(false)
@@ -108,7 +109,7 @@ useEffect(()=>{
             <div className={`${!smallScreen ? 'navbar--options' : showOptionsMenu ? `navbar--options--sc show-menu ${topScrolled&&'navbar--options--sc-scrolled'} ` : 'navbar--options--sc hide-menu'}`}>
                 {
                     navbarOptions.map((item,index)=>(<a
-                        className={item.class} 
+                        className={item.class+` ${pathName==item.href ? 'bg-green-200':!smallScreen?'bg-green-100':'bg-none'}`+" hover:bg-green-200 transition-all duration-700 ease-linear"} 
                         id={item.id} 
                         title={item.title}
                         onClick={()=>router.push(item.href)}
